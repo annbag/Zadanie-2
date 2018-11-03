@@ -31,34 +31,34 @@ export class AppComponent {
 
     private getItems(): void {
         this.items = [{
-            name: "Carrot",
-            category: "vegetable",
+            name: 'Carrot',
+            category: 'vegetable',
             value: 4
         },
             {
-                name: "Orange",
-                category: "fruit",
+                name: 'Orange',
+                category: 'fruit',
                 value: 3
             },
             {
-                name: "Potato",
-                category: "vegetable",
+                name: 'Potato',
+                category: 'vegetable',
                 value: 7
             },
             {
-                name: "Tomato",
-                category: "fruit",
+                name: 'Tomato',
+                category: 'vegetable',
                 value: 3
             },
             {
-                name: "Banana",
-                category: "fruit",
+                name: 'Banana',
+                category: 'fruit',
                 value: 1
             }];
     }
 
     private getCurrencies(): Array<string> {
-        let keys = Object.keys(this.exchangeData);
+        const keys = Object.keys(this.exchangeData);
 
         return keys;
     }
@@ -84,5 +84,4 @@ export class AppComponent {
     private removeItem(item) {
         this.items.splice(this.items.indexOf(item), 1);
     }
-
 }
