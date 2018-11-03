@@ -1,0 +1,51 @@
+<form [formGroup]="currencyForm">
+    <div>
+        <select (input)="changeCurrency($event)">
+            <option *ngFor="let key of currencies" [value]="key" [selected]="key == currentCurrency">
+                {{key}}
+            </option>
+        </select>
+    </div>
+</form>
+
+<div>
+    <h1>Add item</h1>
+    <form [formGroup]="addForm" (ngSubmit)="addItem()">
+        <div>
+            <label for="name">Name</label>
+            <input id="name" [formControl]="addForm.controls['name']">
+        </div>
+        <div>
+            <label for="category">Category</label>
+            <input id="category" [formControl]="addForm.controls['category']">
+        </div>
+
+        <div>
+            <label for="category">Value</label>
+            <input id="value" [formControl]="addForm.controls['value']">
+        </div>
+        <button>Submit</button>
+    </form>
+</div>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Value</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of items">
+            <td>{{item.name}}</td>
+            <td>{{item.category}}</td>
+            <td>{{item.value * exchangeData[currentCurrency] }} {{currentCurrency}}</td>
+            <td>
+                <button (click)="removeItem(item)">delete</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
