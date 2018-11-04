@@ -36,6 +36,7 @@
             <th class="text-center">Category</th>
             <th class="text-center">Value</th>
             <th class="text-center">Actions</th>
+            <th class="text-center">Edit</th>
         </tr>
         </thead>
         <tbody>
@@ -45,6 +46,9 @@
             <td class="text-center">{{item.value * exchangeData[currentCurrency] | number: '1.1-2'}} {{currentCurrency}}</td>
             <td class="text-center">
                 <button type="button" class="btn btn-outline-danger" (click)="removeItem(item)">delete</button>
+            </td>
+            <td class="text-center">
+                <button type="button" class="btn btn-outline-secondary" (click)="editItem(item)">edit</button>
             </td>
         </tr>
         </tbody>

@@ -84,4 +84,12 @@ export class AppComponent {
     private removeItem(item) {
         this.items.splice(this.items.indexOf(item), 1);
     }
+    private editItem(item) {
+        this.removeItem(item);
+        this.addForm.setValue({
+            name: item.name,
+            category: item.category,
+            value: item.value
+        });
+    }
 }
