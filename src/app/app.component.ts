@@ -86,10 +86,6 @@ export class AppComponent {
     }
     private editItem(item) {
         this.removeItem(item);
-        this.addForm.setValue({
-            name: item.name,
-            category: item.category,
-            value: item.value
-        });
+        this.addForm.setValue(item);
     }
 }
