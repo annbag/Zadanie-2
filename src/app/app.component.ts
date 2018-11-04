@@ -8,7 +8,7 @@ import {Response, Http} from '@angular/http';
 })
 export class AppComponent {
     private currentCurrency: string = 'PLN';
-    private exchangeData: any;
+    private exchangeData: any = [];
     private items: Array<Object>;
     private currencies: Array<string>;
     private addForm;
