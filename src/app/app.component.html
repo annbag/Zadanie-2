@@ -41,7 +41,7 @@
         <tr *ngFor="let item of items">
             <td>{{item.name}}</td>
             <td>{{item.category}}</td>
-            <td>{{item.value * exchangeData[currentCurrency] }} {{currentCurrency}}</td>
+            <td>{{item.value * exchangeData[currentCurrency] | number: '1.1-2'}} {{currentCurrency}}</td>
             <td>
                 <button (click)="removeItem(item)">delete</button>
             </td>
