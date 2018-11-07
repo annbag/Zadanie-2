@@ -9,10 +9,10 @@ import {Response, Http} from '@angular/http';
 export class AppComponent {
     private currentCurrency: string = 'EUR';
     private exchangeData: any = [];
-    private items: Array<Object>;
-    private currencies: Array<string>;
-    private addForm;
-    private currencyForm;
+    public items: Array<Object>;
+    public currencies: Array<string>;
+    public addForm;
+    public currencyForm;
 
     constructor(private http: Http, private formBuilder: FormBuilder) {
         this.getExchangeRates();
@@ -63,7 +63,7 @@ export class AppComponent {
         return keys;
     }
 
-    private addItem() {
+    public addItem() {
         this.items.push(this.addForm.value);
     }
 
@@ -77,14 +77,14 @@ export class AppComponent {
 
     }
 
-    private changeCurrency(newCurrency): void {
+    public changeCurrency(newCurrency): void {
         this.currentCurrency = newCurrency.target['value'];
     }
 
-    private removeItem(item) {
+    public removeItem(item) {
         this.items.splice(this.items.indexOf(item), 1);
     }
-    private editItem(item) {
+    public editItem(item) {
         this.removeItem(item);
         this.addForm.setValue(item);
     }
